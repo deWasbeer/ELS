@@ -1,0 +1,64 @@
+\documentclass[dutch]{book}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{siunitx}
+\usepackage{float}
+\usepackage{babel}
+
+\lstset
+{ %Formatting for code in appendix
+	language=Python,
+	basicstyle=\footnotesize,
+	numbers=left,
+	stepnumber=1,
+	showstringspaces=false,
+	tabsize=1,
+	breaklines=true,
+	breakatwhitespace=false,
+	frame=single,
+}
+
+% \begin{reusefigure}[<float spec>]{<ref>}
+\newenvironment{reusefigure}[2][htbp]
+{\addtocounter{figure}{-1}%
+	\renewcommand{\theHfigure}{dupe-fig}% If you're using hyperref
+	\renewcommand{\thefigure}{\ref{#2}}% Figure counter is \ref
+	\renewcommand{\addcontentsline}[3]{}% Avoid placing figure in LoF
+	\begin{figure}[#1]}
+	{\end{figure}}
+
+% Title Page
+\title{Python Cookbook voor MTE}
+\author{W.M. Jutte en J. Antonissen}
+
+
+\begin{document}
+	
+	\frontmatter
+	\maketitle
+	%\input{Glossaries}
+	%\input{Preface}
+	%\input{Abstract}
+	\tableofcontents
+	
+	\mainmatter
+	\part{CircuitPython}
+	\input{IntroductieCircuitPython}
+	\input{FAQ}
+	\input{Ledjes}
+	\input{Sensoren}
+	\input{Aandrijving}
+	\input{Networking}
+	\input{RCboot}
+
+	
+	%\input{Conclusion}
+	
+	\appendix
+	
+	
+	
+\end{document}          
